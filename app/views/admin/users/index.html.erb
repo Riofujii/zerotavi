@@ -1,0 +1,20 @@
+<h1>All Users</h1>
+<div class="container">
+  <%#= will_paginate @users %>
+  <table id="users">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>User Status</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <%= render @users %>
+    </tbody>
+  </table>
+  <%#= will_paginate @users %>
+</div>

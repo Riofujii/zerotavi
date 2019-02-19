@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  
-  def show
-    @user = User.find(params[:id])
-  end
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
  
   def new
     @user = User.new
@@ -10,6 +7,10 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+  end
+  
+  def index
+    @users = User.paginate(page: params[:page], per_page: 10)
   end
   
   def create
@@ -23,11 +24,26 @@ class UsersController < ApplicationController
     end
   end
   
+  def update
+  end
+  
+  
+  def destroy
+  end
+  
 
   private
   
   def user_params
     params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
+  end
+  
+  #ログイン済みユーザーか確認
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
   end
 end
