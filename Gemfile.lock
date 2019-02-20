@@ -283,6 +283,15 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    monetize (1.9.1)
+      money (~> 6.12)
+    money (6.13.2)
+      i18n (>= 0.6.4, <= 2)
+    money-rails (1.13.1)
+      activesupport (>= 3.0)
+      monetize (~> 1.9.0)
+      money (~> 6.13.0)
+      railties (>= 3.0)
     multi_json (1.13.1)
     nenv (0.3.0)
     netrc (0.11.0)
@@ -418,6 +427,7 @@ DEPENDENCIES
   mini_magick (= 4.7.0)
   minitest (= 5.10.3)
   minitest-reporters (= 1.1.14)
+  money-rails
   pg (= 0.20.0)
   puma (~> 3.9.1)
   rails (~> 5.1.6)

@@ -1,0 +1,34 @@
+<h1>Microposts</h1>
+<h2><%= link_to "Create new micropost", new_admin_micropost_path, class: "btn btn-primary" %></h2>
+
+<ul>
+  <table border="1">
+    <tr>
+      <th>タイトル</th>
+      <th>詳細</th>
+      <th>カテゴリー</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>場所</th>
+      <th>金額(円)</th>
+      <th>リンク</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+    <% @micropost.each do |micropost| %>
+    <tr>
+    <td><%= micropost.title %></td>
+    <td><%= micropost.description %></td>
+    <td><%= micropost.category %></td>
+    <td><%= micropost.start_date %></td>
+    <td><%= micropost.end_date %></td>
+    <td><%= micropost.place %></td>
+    <td><%= micropost.price %></td>
+    <td><%= micropost.link %></td>
+    <td><%= link_to "edit", edit_admin_micropost_path(micropost) %></td>
+    <td><%= link_to "delete", admin_micropost_path(micropost), method: :delete, 
+                                         data: { confirm: "You sure?" } %></td>
+    </tr>
+    <% end %>
+  </table>
+</ul>
