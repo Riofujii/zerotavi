@@ -7,7 +7,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 90px;
 }
 
 section {
@@ -24,6 +24,8 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+  margin-top: 150px;
+  color:whitesmoke;
 }
 
 @mixin box_sizing {
@@ -31,6 +33,79 @@ textarea {
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+
+.jumbotron { 
+  background:url(monako.png)
+  center no-repeat; 
+  background-size:cover;
+  margin-left:-15%;
+  margin-right:-15%;
+  margin-top:-5%;
+  height:800px;
+}
+
+.about h1{
+  color:#ffc107!important;
+}
+.about h3{
+  color:#ffc107!important;
+}
+
+
+/* header */
+
+header {
+  background-color: #ffc107!important;
+  border-bottom-color: #ffc107!important;
+  color:whitesmoke;
+  
+}
+
+
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
 
 /* form */
 
