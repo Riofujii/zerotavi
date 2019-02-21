@@ -21,3 +21,13 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+             
+#　マイクロポスト
+Micropost.create!(title: "Internship in Germany",
+                  description: "You will visit Germany and talk with German students",
+                  category: "Internships",
+                  start_date: "2019/3/20",
+                  end_date: "2019/3/23",
+                  place: "Germany",
+                  price: "0",
+                  link: "https://brionac-yu-yake.net/css-full-lineup/#color")
