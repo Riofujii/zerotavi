@@ -1,7 +1,7 @@
 class Admin::MicropostsController < ApplicationController
   
   def index
-    @micropost = Micropost.all
+    @microposts = Micropost.all
   end
   
   def new
@@ -43,7 +43,7 @@ class Admin::MicropostsController < ApplicationController
   
   def micropost_params
     params.require(:micropost).permit(:title, :description, :start_date,
-                                      :end_date, :place, :price,
-                                      :category, :link)
+                                      :end_date, :place, :deadline, :price,
+                                      :category, :link, :picture)
   end
 end
