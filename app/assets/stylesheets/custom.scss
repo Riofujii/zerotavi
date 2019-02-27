@@ -197,7 +197,12 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
-#マイクロポスト
-.card {
-  height: 70px;
+
+/* マイクロポスト */
+.micropost-card {
+  height: 30rem;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #333333;
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
 }
