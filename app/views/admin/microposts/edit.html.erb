@@ -4,27 +4,25 @@
     <%= form_for(@micropost, url: admin_micropost_path) do |f| %>
       <%= f.label :title, "タイトル" %>
       <%= f.text_field :title %>
-      
-      <%= f.label :description, "詳細" %>
-      <%= f.text_area :description %>
-      
+ 
       <%= f.label :category, "カテゴリー" %>
-      <%= f.select :category, ['Internships', 'Workshops'] %>
+      <%= f.select :category, ['教育', 'インターン', '文化交流', '語学留学','奨学金', 'ボランティア', '研修','ワーホリ', '女子教育', '国際会議'] %>
       
-      <%= f.label :start_date, "開始" %>
-      <%= f.date_field :start_date %>
+      <%= f.label :term, "期間" %>
+      <%= f.select :term, ['1週間', '2週間', '1カ月', '2カ月', '3カ月', '半年', '1年', '1~2年', '好きなだけ', 'それぞれ'] %>
       
-      <%= f.label :end_date, "終了" %>
-      <%= f.date_field :end_date %>
+      <%= f.label :place, "国・地域" %>
+      <%= f.select :place, ['アメリカ', '韓国', 'スペイン', '中国', 'ロシア', 'ヨーロッパ', 'アジア', '中東', '太平洋', '英語圏', 'どこでも'] %>
       
-      <%= f.label :place, "場所" %>
-      <%= f.select :place, ['アメリカ', '中国', 'ドイツ', 'フランス', 'ギリシャ', 'カナダ', 'フィリピン'] %>
+      <%= f.label :producer, "提供機関" %>
+      <%= f.text_field :producer %>
       
-      <%= f.label :price, "金額（円）" %>
-      <%= f.text_field :price %>
-      
-      <%= f.label :link, "リンク" %>
+      <%= f.label :link, "関連URL" %>
       <%= f.url_field :link %>
+      
+      <span class="picture">
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+      </span>
       
       <%= f.submit 'Update', class: "btn btn-primary", data: { confirm: 'Are you sure?' } %>
     <% end %>

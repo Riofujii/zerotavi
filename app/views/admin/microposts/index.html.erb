@@ -1,29 +1,27 @@
 <h1>Microposts</h1>
-<h2><%= link_to "Create new micropost", new_admin_micropost_path, class: "btn btn-primary" %></h2>
+<h2><%= link_to "Create new micropost", new_admin_micropost_path, class: "btn btn-warning" %></h2>
 
 <ul>
   <table border="1">
     <tr>
       <th>タイトル</th>
-      <th>詳細</th>
+      <th>画像</th>
       <th>カテゴリー</th>
-      <th>開始日</th>
-      <th>終了日</th>
-      <th>場所</th>
-      <th>金額(円)</th>
+      <th>期間</th>
+      <th>国・地域</th>
+      <th>提供機関</th>
       <th>リンク</th>
       <th>編集</th>
       <th>削除</th>
     </tr>
-    <% @micropost.each do |micropost| %>
+    <% @microposts.each do |micropost| %>
     <tr>
     <td><%= micropost.title %></td>
-    <td><%= micropost.description %></td>
+    <td><%= image_tag micropost.picture.url if micropost.picture? %></td>
     <td><%= micropost.category %></td>
-    <td><%= micropost.start_date %></td>
-    <td><%= micropost.end_date %></td>
+    <td><%= micropost.term %></td>
     <td><%= micropost.place %></td>
-    <td><%= micropost.price %></td>
+    <td><%= micropost.producer %></td>
     <td><%= micropost.link %></td>
     <td><%= link_to "edit", edit_admin_micropost_path(micropost) %></td>
     <td><%= link_to "delete", admin_micropost_path(micropost), method: :delete, 
