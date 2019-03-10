@@ -1,14 +1,38 @@
-<div class="card col-md-3">
-  <div class="micropost-card">
-    <%= image_tag micropost.picture.url if micropost.picture? %>
-    <div class="card-body">
-      <h5 class="card-title"><%= link_to micropost.title %></h5>
-      <% if !Favorite.exists?(user_id: current_user.id, micropost_id: micropost.id) %>
-      <%= link_to "お気に入り", micropost_add_path(micropost), method: :post %>
-      <% else %>
-      <%= link_to "お気に入り解除", micropost_add_path(micropost), method: :delete %>
-      <% end %>
-      <a href=<%= micropost.link %>, class="btn btn-warning">サイトのリンク</a>
+<% favorite ||= Favorite.find_by(user_id: current_user.id, micropost_id: micropost.id) %>
+<div id="micropost-card-<%= micropost.id %>">
+  <div class="card col-md-3">
+    <div class="micropost-card">
+      <div class="picture">
+      <%= image_tag micropost.picture.url if micropost.picture? %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to micropost.title %></h5>
+        <div class="heart">
+        <% if logged_in? %>
+          <% if micropost.like_user(current_user.id) %>
+            <%= button_to micropost_favorite_path(favorite, micropost_id: micropost.id), method: :delete, id: "like-button-#{micropost.id}", remote: true do %>
+              <i class="fas fa-heart text-danger"></i>
+              <span>
+                <%= micropost.favorites_count %>
+              </span>
+            <% end %>
+          <% else %>
+            <%= button_to micropost_favorites_path(micropost), id: "like-button-#{micropost.id}", remote: true do %>
+              <i class="far fa-heart"></i>
+              <span>
+                <%= micropost.favorites_count %>
+              </span>
+            <% end %>
+          <% end %>
+        <% else %>
+          <i class="far fa-heart"></i>
+          <span>
+            <%= micropost.favorites_count %>
+          </span>
+        <% end %>
+        </div>
+        <a href=<%= micropost.link %>, class="btn btn-warning">もっと詳しく</a>
+      </div>
     </div>
   </div>
 </div>

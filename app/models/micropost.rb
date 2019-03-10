@@ -1,8 +1,12 @@
 class Micropost < ApplicationRecord
-    has_many :users, through: :favorites
+    has_many :favorites, dependent: :destroy
     mount_uploader :picture, PictureUploader
     validate :picture_size
     
+    #ユーザーがすでにいいねしているか確認する
+    def like_user(user_id)
+      favorites.find_by(user_id: user_id)
+    end
     
     # アップロードされた画像のサイズをバリデーションする
     def picture_size
