@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/home', to: 'static_pages#home'
+  root 'static_pages#home'
   get '/about', to: 'static_pages#about'
 
   get '/signup', to: 'users#new'
@@ -13,7 +13,10 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :update, :destroy]
     resources :microposts
   end
-  resources :microposts, only: [:index]
+  
+  resources :microposts do
+    resources :favorites, only: [:create, :destroy]
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
