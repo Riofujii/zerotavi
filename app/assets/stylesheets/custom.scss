@@ -66,6 +66,7 @@ header {
 #logo {
   float: left;
   margin-right: 10px;
+  margin-top: 10px;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
@@ -158,7 +159,38 @@ aside {
   margin-top: 15px;
 }
 
+/* searchbox */
+
+.serachbox{
+  width: 30%;
+  position: relative;
+}
+
 /* forms */
+
+.header-form{
+  width: 90%;
+  
+  
+}
+
+.header-search{
+  width: 60%;
+  padding: 5px;
+  border-radius: 10%;
+}
+
+.header-search-submit{
+  width: 35%;
+  color: #FFF;
+  position: relative;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #fd9535;
+  display: inline-block;
+  margin: 10px auto;
+
+}
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;

@@ -14,4 +14,12 @@ class Micropost < ApplicationRecord
         errors.add(:picture, "should be less than 5MB")
       end
     end
+    
+    def self.search(search) 
+      if search 
+        Micropost.where('title LIKE ? OR term LIKE ? OR place LIKE ? OR category LIKE ?', "%#{search}%" , "%#{search}%" , "%#{search}%" , "%#{search}%")
+      else
+        Micropost.all #全て表示。
+      end
+    end
 end

@@ -2,7 +2,14 @@
   <div class="container">
     <%= link_to "zerotavi",root_path, id: "logo" %>
     <nav>
+      
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= form_tag microposts_path, :method => 'get',class: 'header-form pull-right' do %> <%#　projects_pathはモデル名で読みかえること %>
+            <%= text_field_tag :search, params[:search], class: 'header-search' %>
+            <%= submit_tag "Search", :name => nil, class: 'btn header-search-submit'%>
+          <% end %>
+        </li>
         <% if logged_in? %>
           <% if current_user.admin? %>
             <li class="dropdown">
@@ -15,7 +22,7 @@
               </ul>
             </li>
           <% end %>
-          <li><%= link_to "Search", "#" %></li>
+            
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Mypage <b class="caret"></b>
@@ -25,6 +32,7 @@
               <li><%= link_to "Logout", "#" %></li>
             </ul>
           </li>
+            
         <% else %>
           <li><%= link_to "sign up",signup_path %></li>
           <li><%= link_to "Log in",login_path %></li>
