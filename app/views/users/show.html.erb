@@ -7,14 +7,6 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
         <%= @user.email %>
-        
-        <p>content search</p>
-        <%= form_tag user_path, :method => 'get' do %>
-          <p>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search", :name => nil %>
-          </p>
-        <% end %>
         <p><%= link_to "編集", edit_user_path %></p>
       </h1>
     </section>
