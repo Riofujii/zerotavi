@@ -11,4 +11,14 @@
       </h1>
     </section>
   </aside>
+  
+  <div class="col-md-8">
+    <section class="favorite">
+      <h3>お気に入り</h3>
+      <% @favorite_microposts.each do |post| %>
+        <P><%= post.title %></P>
+
+      <% end %>
+    </section>
+  </div>
 </div>
