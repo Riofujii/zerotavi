@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-2">
+    <div class="detail1">
+      <i class="fas fa-certificate text-warning">カテゴリー</i>
+      <h3><%= @micropost.category %></h3>
+    </div>
+    <div class="detail2">
+      <i class="fas fa-landmark text-warning">提供機関</i>
+      <h3><%= @micropost.producer %></h3>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="detail3">
+      <i class="fas fa-globe text-warning">場所</i>
+      <h3><%= @micropost.place %></h3>
+    </div>
+    <div class="detail4">
+      <i class="fas fa-hourglass text-warning">期間</i>
+      <h3><%= @micropost.term %></h3>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="detail-title">
+      <h1><%= @micropost.title %></h1>
+      <a class="btn btn-warning" href=<%= @micropost.link %> target="_blank" role="button">リンクはこちら</a>
+    </div>
+    <div class="detail-description">
+      <h4><%= @micropost.description %></h4>
+    </div>
+  </div>
+</div>
