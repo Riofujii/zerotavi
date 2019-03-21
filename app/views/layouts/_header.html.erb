@@ -10,6 +10,9 @@
             <%= submit_tag "Search", :name => nil, class: 'btn header-search-submit'%>
           <% end %>
         </li>
+        <li>
+          <%= link_to "Microposts", microposts_path %>
+        </li>
         <% if logged_in? %>
           <% if current_user.admin? %>
             <li class="dropdown">
