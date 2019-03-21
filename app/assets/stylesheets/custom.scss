@@ -26,7 +26,6 @@ textarea {
   margin-bottom: 10px;
   margin-top: 150px;
   color:whitesmoke;
-
 }
 
 @mixin box_sizing {
@@ -41,13 +40,8 @@ textarea {
   background-size:cover;
   margin-left:-15%;
   margin-right:-15%;
-  margin-top:-10%;
+  margin-top:-5%;
   height:800px;
-}
-
-  
-.jumbotron h1 {
-  font-size: 100px;
 }
 
 .about h1{
@@ -127,20 +121,6 @@ input {
   height: auto !important;
 }
 
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
-}
-
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
-}
-
 /* sidebar */
 
 aside {
@@ -189,16 +169,15 @@ aside {
 /* forms */
 
 .header-form{
-  width: 90%;
-  
-  
+  width: 50%;
 }
 
 .header-search{
   width: 60%;
   padding: 5px;
   border-radius: 10%;
-  color: black;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 .header-search-submit{
