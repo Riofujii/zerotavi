@@ -1,4 +1,4 @@
-<% favorite ||= Favorite.find_by(user_id: current_user.id, micropost_id: micropost.id) %>
+<% favorite ||= Favorite.find_by(user_id: current_user&.id, micropost_id: micropost.id) %>
 <div id="micropost-card-<%= micropost.id %>">
   <div class="card col-md-4">
     <div class="micropost-card">
