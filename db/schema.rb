@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20190316105945) do
     t.string "category"
     t.text "link"
     t.string "producer"
+    t.text "description"
     t.integer "favorites_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

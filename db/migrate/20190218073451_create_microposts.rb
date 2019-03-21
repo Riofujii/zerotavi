@@ -7,6 +7,7 @@ class CreateMicroposts < ActiveRecord::Migration[5.1]
       t.string :category
       t.text :link
       t.string :producer
+      t.text :description
       t.integer :favorites_count
       
       t.timestamps
