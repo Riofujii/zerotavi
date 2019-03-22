@@ -3,10 +3,10 @@
     <%= link_to "zerotavi",root_path, id: "logo" %>
     <nav>
       
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right"
         <li>
-          <%= form_tag microposts_path, :method => 'get',class: 'header-form pull-right' do %> <%#　projects_pathはモデル名で読みかえること %>
-            <%= text_field_tag :search, params[:search], class: 'header-search' %>
+          <%= form_tag microposts_path, :method => 'get',class: 'header-form pull-left' do %> <%#　projects_pathはモデル名で読みかえること %>
+            <%= text_field_tag :search, params[:search], class: 'header-search', placeholder:"\uF002 検索する" %>
             <%= submit_tag "Search", :name => nil, class: 'btn header-search-submit'%>
           <% end %>
         </li>
