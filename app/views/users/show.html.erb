@@ -15,10 +15,24 @@
   <div class="col-md-8">
     <section class="favorite">
       <h3>お気に入り</h3>
-      <% @favorite_microposts.each do |post| %>
-        <P><%= post.title %></P>
-
-      <% end %>
+      <table border="2" style="border-collapse: collapse; border-color: orange">
+            <tr>
+              <th>タイトル</th>
+              <th>カテゴリー</th>
+              <th>期間</th>
+              <th>国・地域</th>
+              <th>リンク</th>
+            </tr>
+            <% @favorite_microposts.each do |post| %>
+            <tr>
+            <td><%= post.title %></td>
+            <td  width="80"><%= post.category %></td>
+            <td  width="80"><%= post.term %></td>
+            <td  width="80"><%= post.place %></td>
+            <td><%= post.link %></td>
+            </tr>
+        <% end %>
+      </table>
     </section>
   </div>
 </div>
