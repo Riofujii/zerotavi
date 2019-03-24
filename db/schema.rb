@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20190316105945) do
 
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.integer "micropost_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["micropost_id", "created_at"], name: "index_comments_on_micropost_id_and_created_at"
+    t.index ["micropost_id"], name: "index_comments_on_micropost_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "micropost_id"
@@ -43,6 +52,7 @@ ActiveRecord::Schema.define(version: 20190316105945) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.boolean "admin", default: false
+    t.string "image"
     t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end

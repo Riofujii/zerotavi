@@ -4,7 +4,11 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
+        <% if @user.image? %>
+          <%= image_tag @user.image.url, class: "image" %>
+        <% else %>
+          <%= gravatar_for @user %>
+        <% end %>
         <%= @user.name %>
         <%= @user.email %>
         <p><%= link_to "編集", edit_user_path %></p>

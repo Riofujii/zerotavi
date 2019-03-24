@@ -29,3 +29,15 @@
     </div>
   </div>
 </div>
+
+<% if false %>
+ <div class="col-md-8">
+    <% if @micropost.comments.any? %>
+      <h3>Comment (<%= @micropost.comments.count %>)</h3>
+      <ol class="comments">
+        <%= render @comments %>
+      </ol>
+      <%= will_paginate @comments %>
+    <% end %>
+  </div>
+<% end %>

@@ -7,6 +7,13 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
+      
+      <% if @user.image? %>
+        <%= image_tag @user.image.url %>
+      <% else %>
+        <%= image_tag("/images/icon/no-image.png") %>
+      <% end %>
+      <%= f.file_field :image %>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
