@@ -10,7 +10,7 @@
   <td>A Normal User</td>
   <td><%= link_to "Administrate this user", admin_user_path(user, admin: true), method: :put,
     data: { confirm: 'Are you sure?' } %></td>
-<% end %>
   <td><%= link_to "Delete", admin_user_path(user), method: :delete,
   data: { confirm: 'Are you sure?' } %></td>
+<% end %>
 </tr>
