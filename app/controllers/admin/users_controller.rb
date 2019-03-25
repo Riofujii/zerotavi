@@ -1,6 +1,7 @@
 class Admin::UsersController < ApplicationController
 before_action :logged_in_user
 before_action :admin_user
+before_action :not_current_user, only: [:update, :destroy]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 10)
@@ -49,4 +50,11 @@ before_action :admin_user
     redirect_to(login_url) unless current_user.admin?
   end
   
+  def not_current_user
+    user = User.find(params[:id])
+    if current_user == user
+      flash[:notice] = "自分のステータスは変更できません"
+      redirect_to(admin_users_path)
+    end
+  end
 end
